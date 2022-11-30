@@ -7,14 +7,19 @@ import java.io.File;
 
     public class LabProgram {
         public static void main(String[] args) throws IOException {
+           //create scanner to hold user filename
             Scanner scnr = new Scanner(System.in);
             /* Type your code here. */
 
             String fileName = scnr.next();
+            //path to search for the file
             File testResult = new File("src/main/resources/"+fileName);
+            // scanner to scan the contents of the file
             Scanner scanner = new Scanner(testResult);
 
             String line;
+
+            //loop that checks if file has a next line and replaces the part intended
             while(scanner.hasNextLine()){
                 line = scanner.nextLine();
 
@@ -23,6 +28,7 @@ import java.io.File;
                     System.out.println(line);
                 }
             }
+            //closing the scanner for the file
             scanner.close();
         }
     }
